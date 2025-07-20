@@ -1,0 +1,51 @@
+version: "3.9"
+
+services:
+  postgres:
+    image: postgis/postgis:15-3.4
+    container_name: postgis
+    environment:
+      POSTGRES_DB: geodb
+      POSTGRES_USER: admin
+      POSTGRES_PASSWORD: 123
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+
+  elasticsearch:
+    image: docker.elastic.co/elasticsearch/elasticsearch:8.13.0
+    container_name: elasticsearch
+    environment:
+      - discovery.type=single-node
+      - xpack.security.enabled=false
+      - bootstrap.memory_lock=true
+      - "ES_JAVA_OPTS=-Xms512m -Xmx512m"
+    ports:
+      - "9200:9200"
+    volumes:
+      - esdata:/usr/share/elasticsearch/data
+    ulimits:
+      memlock:
+        soft: -1
+        hard: -1
+
+  spark-etl:
+    build: .
+    container_name: spark-etl
+    depends_on:
+      - postgres
+      - elasticsearch
+    environment:
+      - POSTGRES_HOST=postgres
+      - POSTGRES_DB=geodb
+      - POSTGRES_USER=admin
+      - POSTGRES_PASSWORD=123
+      - ELASTIC_HOST=elasticsearch
+      - ELASTIC_PORT=9200
+    volumes:
+      - .:/app
+
+volumes:
+  postgres_data:
+  esdata:
