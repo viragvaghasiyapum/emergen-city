@@ -1,0 +1,29 @@
+{
+  "name": "Spark ETL Dev",
+  "dockerComposeFile": [
+    "../docker-compose.yaml"
+  ],
+  "service": "spark-etl",
+  "workspaceFolder": "/app",
+
+  // VS Code extensions to install in the container
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "ms-python.python",
+        "ms-azuretools.vscode-docker",
+        "repreng.csv",
+        "ms-python.debugpy",
+        "ms-python.vscode-pylance",
+        "ms-python.vscode-python-envs"
+      ]
+    }
+  },
+
+  // Services that must be running for your dev container
+  "runServices": [
+    "spark-etl",
+    "postgres",
+    "elasticsearch"
+  ]
+}

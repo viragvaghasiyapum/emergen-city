@@ -1,0 +1,49 @@
+Location : Amsterdam, Netherlands
+
+1. Zoning Infrastructure
+  - https://maps.amsterdam.nl/open_geodata/?LANG=en (urban & living -> Non-residential functions, High-rise - points, High-rise - flats)
+   not necessary ( - High-rise buildings - points or https://www.ahn.nl/ahn-viewer (AHN viewer -> AHN3 - Buildings, AHN3 - High-rise buildings) )
+
+2. Traffic Infrastructure
+  - https://maps.amsterdam.nl/open_geodata/?LANG=en (Traffic & infrastructure -> Traffic information systems, Traffic lights, Traffic forecasts)
+  - https://www.tomtom.com/products/traffic-apis/ (real-time traffic data with generous free tier)
+
+3. Water Infrastructure
+  - https://openinframap.org/#14.75/52.33177/5.03445/A,B,L,W (Layers -> Water)
+
+4. Power Infrastructure
+  - https://openinframap.org/#10.23/52.2029/5.1468/A,B,L,P (Layers -> Power)
+
+5. Telecom Infrastructure
+  - https://openinframap.org/#11.39/52.272/5.2768/A,B,L,T (Layers -> Telecom)
+
+6. Weather Data
+  - https://open-meteo.com/ (open source, non-commercial)
+
+  https://www.infrageomatics.com/products/osm-export/documentation
+
+
+-> Important observations about openinframap.org:
+  - A third-party service that relies on sources like https://www.gem.wiki/ , https://www.wikidata.org/ , https://commons.wikimedia.org/.
+  - Authenticity of some of the data is cross referenced through articles, but authenticity of complete datasets cannot be guaranteed.
+  - Datasets are paid.
+
+
+
+possible data enrichment add-ons
+
+  - Shopping areas (zoning)
+  - social facilities (zoning)
+  - art and culture (zoning)
+  - monument points (zoning)
+  - Traffic informationsystems
+  - Tram stops and metro stations 2025
+  - 2025 Tramway and Metro Lines 
+  - Public lighting
+  - solar panels
+  - Rainproof - Bottlenecks
+  - Climate - Flood
+  - function mix (zoning)
+  - Corporate ownership AFWC 2024 ?? (zoning)
+  - Public toilets
+  - Green and multifunctional roofs

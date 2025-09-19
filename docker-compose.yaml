@@ -45,6 +45,7 @@ services:
       - ELASTIC_PORT=9200
     volumes:
       - .:/app
+    command: bash
 
 volumes:
   postgres_data:
